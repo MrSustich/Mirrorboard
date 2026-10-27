@@ -3,58 +3,110 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mirrorboard — Support</title>
+<title>Support · Mirrorboard</title>
+<meta name="description" content="Mirrorboard: a split-screen whiteboard for one-on-one tutoring on iPad. Writing on one side mirrors to the other.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' rx='18' fill='%23f0907a'/%3E%3Cpath d='M0 18a18 18 0 0118-18h28a18 18 0 0118 18v14H0z' fill='%236fae8e'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='4.5' stroke-linecap='round'%3E%3Cpath d='M12 43q5.5-9 10.5 0t10.5 0 10.5 0 8-4'/%3E%3Cpath d='M12 43q5.5-9 10.5 0t10.5 0 10.5 0 8-4' transform='rotate(180 32 32)'/%3E%3C/g%3E%3Cpath d='M8 32h48' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-dasharray='0.1 6' fill='none'/%3E%3C/svg%3E">
 <style>
-  body { font-family: -apple-system, system-ui, sans-serif; background: #fcf8f1; color: #1f1b16;
-         max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; line-height: 1.6; }
-  h1 { font-family: Georgia, serif; font-size: 34px; margin-bottom: 4px; }
-  h2 { font-family: Georgia, serif; font-size: 21px; margin-top: 32px; }
-  .contact { background: #fdf0ea; border-radius: 16px; padding: 16px 20px; }
+:root { --ink:#1f1b16; --paper:#fcf8f1; --card:#ffffff; --muted:#6f665b; --sage:#6fae8e; --sage-bg:#eef6f0;
+        --coral:#f0907a; --coral-bg:#fdf0ea; --sun:#f7d56b; --sun-bg:#fbefc2; }
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body { margin:0; color:var(--ink); background:var(--paper);
+       font: 17px/1.6 ui-rounded, "SF Pro Rounded", Nunito, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+.wrap { max-width:720px; margin:0 auto; padding:28px 18px 56px; }
+.serif, h1, h2, .wordmark { font-family: ui-serif, "New York", Fraunces, Georgia, "Times New Roman", serif; }
+header { display:flex; align-items:center; gap:16px; padding:18px 20px; margin-bottom:28px; border-radius:30px;
+         background:linear-gradient(var(--sage-bg) 50%, var(--coral-bg) 50%); position:relative; box-shadow:0 12px 26px -18px #5a4a3a88; }
+header > * { position:relative; z-index:1; }
+.icon { width:64px; height:64px; flex:none; filter:drop-shadow(0 6px 8px #5a4a3a44); }
+.wordmark { font-weight:800; font-size:36px; line-height:1; letter-spacing:-.02em; }
+.tag { color:var(--muted); font-size:15px; margin-top:4px; font-weight:600; }
+.card { background:var(--card); border-radius:30px; box-shadow:0 12px 26px -18px #5a4a3a88; padding:26px 26px 12px; margin-bottom:26px; }
+h1 { font-weight:800; font-size:32px; line-height:1.1; letter-spacing:-.02em; margin:0 0 18px; position:relative; display:inline-block; padding-bottom:12px; }
+h1:after { content:""; position:absolute; left:0; bottom:0; width:96px; height:10px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='10'%3E%3Cpath d='M2 5q6-6 12 0t12 0 12 0 12 0 12 0 12 0 12 0 12 0' fill='none' stroke='%23f7d56b' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat; }
+h2 { font-weight:700; font-size:20px; line-height:1.25; margin:24px 0 6px; }
+.card h1 + p, .card h1 + .muted { margin-top:0; }
+p, li { margin:0 0 14px; }
+.muted { color:var(--muted); font-size:15px; }
+a { color:#2f6a46; font-weight:700; }
+.button { display:inline-block; background:var(--ink); color:#fff; text-decoration:none; font-weight:700; border-radius:999px;
+          padding:12px 24px; margin:4px 0 16px; transition:transform .25s cubic-bezier(.34,1.8,.5,1); }
+.button:active { transform:scale(.94); }
+.sticker { display:inline-block; background:var(--sun-bg); color:#7a5d0c; border-radius:999px; padding:3px 14px; font-weight:800; transform:rotate(-2deg); }
+.summary { background:var(--sage-bg); border-radius:20px; padding:16px 20px; margin-bottom:18px; }
+.contact { background:var(--coral-bg); border-radius:20px; padding:16px 20px; }
+footer { text-align:center; color:var(--muted); font-size:14px; }
+footer a { margin:0 8px; }
+@media (max-width:480px) { .wordmark { font-size:30px; } .card { padding:22px 20px 8px; border-radius:26px; } }
+@media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
 </style>
 </head>
 <body>
-<h1>Mirrorboard Support</h1>
-<p>Mirrorboard is a split-screen whiteboard for one-on-one tutoring on iPad.</p>
+<div class="wrap">
+<header>
+  <svg class="icon" viewBox="0 0 64 64" role="img" aria-label="Mirrorboard app icon"><rect width="64" height="64" rx="18" fill="#f0907a"/><path d="M0 18a18 18 0 0118-18h28a18 18 0 0118 18v14H0z" fill="#6fae8e"/><g fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round"><path d="M12 43q5.5-9 10.5 0t10.5 0 10.5 0 8-4"/><path d="M12 43q5.5-9 10.5 0t10.5 0 10.5 0 8-4" transform="rotate(180 32 32)"/></g><path d="M8 32h48" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="0.1 6" fill="none"/></svg>
+  <div>
+    <div class="wordmark">Mirrorboard</div>
+    <div class="tag">Two sides, one table.</div>
+  </div>
+</header>
 
-<p class="contact"><strong>Need help?</strong> Email <a href="mailto:kyle.sustich@me.com">kyle.sustich@me.com</a>. We usually reply within 2 business days.</p>
+<div class="card">
+  <h1>Support</h1>
+  <p>Mirrorboard is a split-screen whiteboard for one-on-one tutoring on iPad.</p>
+  <p class="contact"><strong>Need help?</strong> Email <a href="mailto:mr.sustich@icloud.com?subject=Mirrorboard%20support">mr.sustich@icloud.com</a>. We usually reply within 2 business days.</p>
+  <a class="button" href="mailto:mr.sustich@icloud.com?subject=Mirrorboard%20support">Email support</a>
+</div>
 
-<h2>Common questions</h2>
+<div class="card">
+  <h1>Common questions</h1>
 
-<p><strong>How do I set it up?</strong><br>
-Lay your iPad flat on the table between you and your student, in landscape or portrait. You sit at the
-bottom edge (the green half); your student sits at the top edge (the pink half).</p>
+  <h2>How do I set it up?</h2>
+  <p>Lay your iPad flat on the table between you and your student, in landscape or portrait. You sit at the
+  bottom edge (the green half); your student sits at the top edge (the pink half).</p>
 
-<p><strong>How do I make a perfect shape?</strong><br>
-Tap the shapes button in the toolbar (a square with a circle) so it turns yellow. Draw a line, circle,
-triangle or box and hold the Pencil still at the end for a moment; it snaps into a neat shape.</p>
+  <h2>How do I make a perfect shape?</h2>
+  <p>Tap the shapes button in the toolbar (a square with a circle) so it turns yellow. Draw a line, circle,
+  triangle or box and hold the Pencil still at the end for a moment; it snaps into a neat shape.</p>
 
-<p><strong>How do I erase just part of a stroke?</strong><br>
-Tap the eraser, then tap it again and choose <em>Precise</em>. To erase whole strokes at once, choose
-<em>Whole strokes</em>.</p>
+  <h2>How do I erase just part of a stroke?</h2>
+  <p>Tap the eraser, then tap it again and choose <em>Precise</em>. To erase whole strokes at once, choose
+  <em>Whole strokes</em>.</p>
 
-<p><strong>Can I move the toolbar?</strong><br>
-Yes. Open Settings on the home screen and choose <em>Left</em>, <em>Center</em> or <em>Right</em>.</p>
+  <h2>Can I move the toolbar?</h2>
+  <p>Yes. Open Settings on the home screen and choose <em>Left</em>, <em>Center</em> or <em>Right</em>.</p>
 
-<p><strong>My finger doesn't draw.</strong><br>
-Open Settings on the Mirrorboard home screen and turn off <em>Pencil only</em>. Also, right after you
-use Apple Pencil, finger touches on your half are ignored for a few seconds so your resting hand
-doesn't draw. Your student can still draw with a finger on their half.</p>
+  <h2>My finger doesn't draw.</h2>
+  <p>Open Settings on the Mirrorboard home screen and turn off <em>Pencil only</em>. Also, right after you
+  use Apple Pencil, finger touches on your half are ignored for a few seconds so your resting hand
+  doesn't draw. Your student can still draw with a finger on their half.</p>
 
-<p><strong>How do I rename a board?</strong><br>
-Open the board and tap <em>Save</em> in the palette. Change the title, student, or topic, then tap
-<em>Save board</em>.</p>
+  <h2>How do I rename a board?</h2>
+  <p>Open the board and tap <em>Save</em> in the palette. Change the title, student, or topic, then tap
+  <em>Save board</em>.</p>
 
-<p><strong>How do I reorder boards?</strong><br>
-On the home screen, press and hold a board, then drag it to a new spot.</p>
+  <h2>How do I reorder boards?</h2>
+  <p>On the home screen, press and hold a board, then drag it to a new spot.</p>
 
-<p><strong>Can I get my boards onto another iPad?</strong><br>
-Boards are stored only on the iPad where you made them. They move to a new iPad when you restore
-that iPad from a backup of the old one.</p>
+  <h2>Can I get my boards onto another iPad?</h2>
+  <p>Boards are stored only on the iPad where you made them. They move to a new iPad when you restore
+  that iPad from a backup of the old one.</p>
 
-<p><strong>How do I see the welcome tour again?</strong><br>
-Open Settings on the home screen and tap <em>Show intro</em>.</p>
+  <h2>How do I see the welcome tour again?</h2>
+  <p>Open Settings on the home screen and tap <em>Show intro</em>.</p>
+</div>
 
-<h2>Privacy</h2>
-<p>Mirrorboard collects no data. See the <a href="privacy-policy.html">privacy policy</a>.</p>
+<div class="card">
+  <h1>Privacy</h1>
+  <p>Mirrorboard collects no data. See the <a href="privacy-policy.html">privacy policy</a>.</p>
+</div>
+
+<footer>
+  <a href="index.html">Support</a> · <a href="privacy-policy.html">Privacy Policy</a>
+  <p>© 2026 Kyle Sustich</p>
+</footer>
+</div>
 </body>
 </html>
